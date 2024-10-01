@@ -1,0 +1,15 @@
+name: Trigger Jenkins on Merge
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - develop  # 트리거하려는 브랜치를 지정
+
+jobs:
+  trigger-jenkins:
+    if: github.event.pull_request.merged == true  # PR이 merge된 경우에만 실행
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Jenkins Job
+        run: curl -X POST "${{secrets.JENKINS_URL}}/job/flower-dance/build?token=${{secrets.JENKINS_TOKEN}}"
