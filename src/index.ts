@@ -3,14 +3,13 @@ dotenv.config();
 import "tsconfig-paths/register";
 import express, { Request, Response } from "express";
 import morgan from "morgan";
-import wowUtils from "@/utils/wowUtils";
 import { errorHandler } from "@/middlewares/errorHandler";
 import RootRouter from "@/router/Router";
 
 import "@/models/dataSource";
 
 const app = express();
-const port = 3000;
+const port = 8765;
 
 // Middlewares
 app.use(morgan("dev"));
