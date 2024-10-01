@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req: Request, res: Response) => {
-  res.send("Hello, TypeScript with Express!!!!");
+  res.send("Hello, TypeScript with Express!!!!!!");
 });
 
 // 라우터
