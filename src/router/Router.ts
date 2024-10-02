@@ -1,8 +1,9 @@
-import exampleRouter from "@/router/exampleRouter";
+import rankingRouter from "@/router/rankingRouter";
 import { Router } from "express";
 
 const RootRouter = Router();
 
-RootRouter.use("/example", exampleRouter);
+
+RootRouter.use("/ranking", rankingRouter);
 
 export default RootRouter;
